@@ -1,11 +1,9 @@
 const express = require('express');
 const path = require('path');
-
 const app = express();
-app.use(express.json());
+import {metodos as autenticador} from './controllers/usercontrollers.js';
 
-// aparecer en archivo index
-app.use(express.static(path.join(__dirname, '../public'))); 
+app.use(express.static(path.join(__dirname, '../public')));
 
 
 
@@ -13,5 +11,17 @@ app.listen(3000, () => {
     console.log('Servidor corriendo en http://localhost:3000');
 });
 
-app.get("/", (req, res)=> res.sendFile(__dirname + "/contenidos/login.html"))
-app.get("/", (req, res)=> res.sendFile(__dirname + "/contenidos/registro.html"))
+
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/contenidos/login.html'));
+});
+
+
+app.get('/registro', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/contenidos/registro.html'));
+});
+
+
+app.post('/api/registro', autenticador.registro)
+
+app.post('/api/login', autenticador.login)
