@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-import {metodos as autenticador} from './controllers/usercontrollers.js';
+
 
 app.use(express.static(path.join(__dirname, '../public')));
 
@@ -22,6 +22,4 @@ app.get('/registro', (req, res) => {
 });
 
 
-app.post('/api/registro', autenticador.registro)
 
-app.post('/api/login', autenticador.login)

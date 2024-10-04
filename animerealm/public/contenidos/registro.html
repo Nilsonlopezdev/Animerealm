@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>registrar animerealm</title>
-    <link rel="stylesheet" href="/public/styles/registro.css">
-    <script src="/public/javascrips/registro.js"></script>
+    <link rel="stylesheet" href="/styles/registro.css">
+    <script src="/javascrips/registro.js"></script>
     <link rel="web site icon" type="jpg" href="/img/logo animerealm.jpg">
 </head>
 <body>
-    
+    <main>
+        <div class="form">
+            <form id="formulario">
+                <h2>Registrate</h2>
+                <input type="text" id="name" name="name" placeholder="Nombre..." required><br>
+                <input type="email" id="gmail" name="gmail" placeholder="Correo electronico..." required><br>
+                <input type="password" id="pass" name="pass" placeholder="Contraseña..." required><br>
+                <p class="error">error al registrar</p>
+                <button type="submit">Registrate</button>
+                <h3>¿Ya tienes una cuenta? <a href="/login">Inicia Sesion</a></h3>
+            </form>
+        </div>
+    </main>
 </body>
 </html>
